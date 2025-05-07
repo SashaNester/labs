@@ -22,3 +22,25 @@ header {
     font-family: Arial, Helvetica, sans-serif;
     margin: 0px;
 }
+a {
+    color: rgb(113, 191, 113);
+    text-decoration: none;
+}
+a:link {
+    color: darkblue;
+    text-decoration: underline;
+}
+a:visited {
+    color: coral;
+    text-decoration: underline;
+}
+a:hover {
+    color: rgb(239, 123, 123);
+    text-decoration: underline;
+    background-color: rgb(64, 64, 193);
+    text-shadow: 5px;
+}
+a:active {
+    color: black;
+    opacity: 0.3;
+}
