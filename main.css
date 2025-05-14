@@ -8,13 +8,17 @@ main {
     background-color: lightyellow;
     color: maroon;
     font-family: Arial, Helvetica, sans-serif;
-    margin: 0px;
+    margin: 10px 20px 18.4px;
 }
 footer {
     background-color: rgb(28, 71, 98);
     color: lightcoral;
     font-family: Arial, Helvetica, sans-serif;
     margin: 0px;
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    left: 0;
 }
 header {
     background-color: rgb(28, 71, 98);
@@ -45,4 +49,14 @@ a:hover {
 a:active {
     color: black;
     opacity: 0.3;
+}
+div.menu {
+    border: 5px solid #00880060;
+    border-radius: 5px;
+    width: 300px;
+    margin: 0 auto;
+}
+div.menu:hover {
+    background-color: lightgray;
+    box-shadow: 0 0 30px #00000030;
 }
