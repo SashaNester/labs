@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Нестерова Александра Денисовна. Лабораторная работа 4</title>
+        <link rel="stylesheet" href="../main.css">
+        <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon">
+        <link rel="icon" href="../favicon-16x16.png">
+        <link rel="icon" href="../favicon-32x32.png">
+        <style>
+            .a {
+                font-size: 40px;
+                font-family: Georgia, 'Times New Roman', Times, serif;
+                color: darksalmon;
+                transform: rotate(20deg);
+                position: absolute;
+                left: 100px;
+                top: 100px;
+            }
+            .b {
+                font-size: 70px;
+                font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+                color: rgb(70, 167, 188);
+                transform: rotate(-40deg);
+                position: absolute;
+                left: 250px;
+                top: 70px;
+            }
+            .c {
+                font-size: 30px;
+                font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+                color: rgb(200, 157, 232);
+                position: absolute;
+                left: 500px;
+                top: 250px;
+            }
+            .d {
+                font-size: 50px;
+                font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+                color: rgb(109, 200, 130);
+                transform: rotate(40deg);
+                position: absolute;
+                left: 80px;
+                top: 250px;
+            }
+            .e {
+                font-size: 45px;
+                font-family: 'Courier New', Courier, monospace;
+                color: rgb(16, 141, 194);
+                transform: rotate(-10deg);
+                position: absolute;
+                left: 250px;
+                top: 300px;
+            }
+            .f {
+                font-size: 65px;
+                font-family: Verdana, Geneva, Tahoma, sans-serif;
+                color: rgb(102, 33, 97);
+                position: absolute;
+                left: 40px;
+                top: 120px;
+            }
+            .g {
+                font-size: 30px;
+                font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+                color: rgb(233, 122, 122);
+                transform: rotate(25deg);
+                position: absolute;
+                left: 550px;
+                top: 50px;
+            }
+            .h {
+                font-size: 20px;
+                font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+                color: rgb(87, 33, 203);
+                position: absolute;
+                left: 40px;
+                top: 40px;
+            }
+            .i {
+                font-size: 40px;
+                font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+                color: rgb(194, 233, 122);
+                transform: rotate(25deg);
+                position: absolute;
+                left: 500px;
+                top: 150px;
+            }
+            .j {
+                font-size: 20px;
+                font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+                color: rgb(236, 249, 96);
+                transform: rotate(-20deg);
+                position: absolute;
+                left: 250px;
+                top: 250px;
+            }
+            .k {
+                font-size: 35px;
+                font-family: Arial, Helvetica, sans-serif;
+                color: rgb(79, 229, 191);
+                position: absolute;
+                left: 400px;
+                top: 100px;
+            }
+            .l {
+                font-size: 50px;
+                font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+                color: rgb(110, 32, 6);
+                transform: rotate(-10deg);
+                position: absolute;
+                left: 50px;
+                top: 300px;
+            }
+            .m {
+                font-size: 45px;
+                font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+                color: rgb(19, 92, 28);
+                transform: rotate(5deg);
+                position: absolute;
+                left: 150px;
+                top: 60px;
+            }
+            .n {
+                font-size: 20px;
+                font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                color: rgb(20, 14, 133);
+                position: absolute;
+                left: 400px;
+                top: 200px;
+            }
+            .o {
+                font-size: 40px;
+                font-family: Georgia, 'Times New Roman', Times, serif;
+                color: rgb(233, 122, 207);
+                transform: rotate(20deg);
+                position: absolute;
+                left: 500px;
+                top: 400px;
+            }
+            .p {
+                font-size: 50px;
+                font-family: 'Courier New', Courier, monospace;
+                color: rgb(158, 57, 24);
+                position: absolute;
+                left: 400px;
+                top: 400px;
+            }
+            .q {
+                font-size: 35px;
+                font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+                color: rgb(244, 188, 98);
+                transform: rotate(-30deg);
+                position: absolute;
+                left: 60px;
+                top: 400px;
+            }
+            .r {
+                font-size: 50px;
+                font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+                color: rgb(122, 233, 135);
+                transform: rotate(5deg);
+                position: absolute;
+                left: 100px;
+                top: 400px;
+            }
+
+            .a:hover {
+                font-size: 50px;
+                text-shadow: 5px 5px 5px;
+                z-index: 1;
+            }
+            .b:hover {
+                font-size: 80px;
+                text-shadow: 5px 5px 5px;
+                z-index: 1;
+            }
+            .c:hover {
+                font-size: 40px;
+                text-shadow: 5px 5px 5px;
+                z-index: 1;
+            }
+            .d:hover {
+                font-size: 60px;
+                text-shadow: 5px 5px 5px;
+                z-index: 1;
+            }
+            .e:hover {
+                font-size: 55px;
+                text-shadow: 5px 5px 5px;
+                z-index: 1;
+            }
+            .f:hover {
+                font-size: 75px;
+                text-shadow: 5px 5px 5px;
+                z-index: 1;
+            }
+            .g:hover {
+                font-size: 40px;
+                text-shadow: 5px 5px 5px;
+                z-index: 1;
+            }
+            .h:hover {
+                font-size: 30px;
+                text-shadow: 5px 5px 5px;
+                z-index: 1;
+            }
+            .i:hover {
+                font-size: 50px;
+                text-shadow: 5px 5px 5px;
+                z-index: 1;
+            }
+            .j:hover {
+                font-size: 30px;
+                text-shadow: 5px 5px 5px;
+                z-index: 1;
+            }
+            .k:hover {
+                font-size: 45px;
+                text-shadow: 5px 5px 5px;
+                z-index: 1;
+            }
+            .l:hover {
+                font-size: 60px;
+                text-shadow: 5px 5px 5px;
+                z-index: 1;
+            }
+            .m:hover {
+                font-size: 55px;
+                text-shadow: 5px 5px 5px;
+                z-index: 1;
+            }
+            .n:hover {
+                font-size: 30px;
+                text-shadow: 5px 5px 5px;
+                z-index: 1;
+            }
+            .o:hover {
+                font-size: 50px;
+                text-shadow: 5px 5px 5px;
+                z-index: 1;
+            }
+            .p:hover {
+                font-size: 60px;
+                text-shadow: 5px 5px 5px;
+                z-index: 1;
+            }
+            .q:hover {
+                font-size: 45px;
+                text-shadow: 5px 5px 5px;
+                z-index: 1;
+            }
+            .r:hover {
+                font-size: 60px;
+                text-shadow: 5px 5px 5px;
+                z-index: 1;
+            }
+        </style>
+    </head>
+    <body>
+        <header>
+            НГТУ, ФБ, Лабораторная работа 4
+        </header>
+
+        <main>
+            <div class="a">роза</div> 
+            <div class="b">астра</div>
+            <div class="c">ромашка</div>
+            <div class="d">эустома</div>
+            <div class="e">альстромерия</div>
+            <div class="f">хризантема</div>
+            <div class="g">тюльпан</div>
+            <div class="h">гладиолус</div>
+            <div class="i">пион</div>
+            <div class="j">гвоздика</div>
+            <div class="k">гербера</div>
+            <div class="l">ирис</div>
+            <div class="m">лилия</div>
+            <div class="n">орхидея</div>
+            <div class="o">нарцисс</div>
+            <div class="p">фрезия</div>
+            <div class="q">магнолия</div>
+            <div class="r">гортензия</div>  
+        </main>
+
+        <footer>
+            &copy; Александра Нестерова, ФБИ-32, 2 курс, 2025
+        </footer>
+    </body>
+</html>
