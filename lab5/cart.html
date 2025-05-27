@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Нестерова Александра Денисовна. Лабораторная работа 5</title>
+    <link rel="stylesheet" href="../main.css">
+    <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon">
+    <link rel="icon" href="../favicon-16x16.png">
+    <link rel="icon" href="../favicon-32x32.png">
+    <script>
+        function counter() {
+            let a = parseInt(document.getElementById('apple').value) || 0;
+            let p = parseInt(document.getElementById('pear').value) || 0;
+            let o = parseInt(document.getElementById('orange').value) || 0;
+            let m = parseInt(document.getElementById('melon').value) || 0;
+
+            let total = (a * 100) + (p * 80) + (o * 150) + (m * 300);
+            document.getElementById('result').innerHTML = 'Общая цена: ' + total + ' р';
+        }
+
+        function clearFields() {
+            document.getElementById('apple').value = '';
+            document.getElementById('pear').value = '';
+            document.getElementById('orange').value = '';
+            document.getElementById('melon').value = '';
+            document.getElementById('result').innerHTML = '';
+        }
+    </script>
+    <style>
+        .button {
+            display: inline-block;
+            margin-top: 10px;
+            padding: 5px 10px;
+            border: 1px solid black;
+            cursor: pointer;
+            background-color: white;
+        }
+        #result {
+            margin-top: 10px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        НГТУ, ФБ, Лабораторная работа 5
+    </header>
+
+    <main>
+        <div>
+            <h1>Корзина товаров</h1>
+            <div>Яблоки (100р/шт):</div>
+            <div><input type="number" min="0" placeholder="Введите количество яблок" id="apple"></div>
+
+            <div>Груши (80р/шт):</div>
+            <div><input type="number" min="0" placeholder="Введите количество груш" id="pear"></div>
+
+            <div>Апельсины (150р/шт):</div>
+            <div><input type="number" min="0" placeholder="Введите количество апельсинов" id="orange"></div>
+
+            <div>Дыни (300р/шт):</div>
+            <div><input type="number" min="0" placeholder="Введите количество дынь" id="melon"></div>
+
+            <div class="button" onclick="counter()">Рассчитать</div>
+            <div class="button" onclick="clearFields()">Очистить</div>
+
+            <div id="result"></div>
+        </div>
+    </main>
+
+    <footer>
+        &copy; Александра Нестерова, ФБИ-32, 2 курс, 2025
+    </footer>
+</body>
+</html>
