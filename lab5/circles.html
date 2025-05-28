@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Нестерова Александра Денисовна. Лабораторная работа 5</title>
+    <link rel="stylesheet" href="../main.css">
+    <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon">
+    <link rel="icon" href="../favicon-16x16.png">
+    <link rel="icon" href="../favicon-32x32.png">
+    <script>
+        function hideCircle(element) {
+            element.style.opacity = "0";
+            element.style.width = "0";            
+            element.style.height = "0";
+        }
+        function resetCircle() {
+            document.getElementById("c1").style.opacity = "1";
+            document.getElementById("c2").style.opacity = "1";
+            document.getElementById("c3").style.opacity = "1";
+            document.getElementById("c4").style.opacity = "1";
+            document.getElementById("c5").style.opacity = "1";
+            document.getElementById("c6").style.opacity = "1";
+            document.getElementById("c7").style.opacity = "1";
+            document.getElementById("c8").style.opacity = "1";
+            document.getElementById("c9").style.opacity = "1";
+            document.getElementById("c10").style.opacity = "1";
+            document.getElementById("c1").style.width = "50px";            
+            document.getElementById("c2").style.width = "50px";
+            document.getElementById("c3").style.width = "50px";            
+            document.getElementById("c4").style.width = "50px";
+            document.getElementById("c5").style.width = "50px";            
+            document.getElementById("c6").style.width = "50px";
+            document.getElementById("c7").style.width = "50px";            
+            document.getElementById("c8").style.width = "50px";
+            document.getElementById("c9").style.width = "50px";            
+            document.getElementById("c10").style.width = "50px";
+            document.getElementById("c1").style.height = "50px";            
+            document.getElementById("c2").style.height = "50px";
+            document.getElementById("c3").style.height = "50px";            
+            document.getElementById("c4").style.height = "50px";
+            document.getElementById("c5").style.height = "50px";            
+            document.getElementById("c6").style.height = "50px";
+            document.getElementById("c7").style.height = "50px";            
+            document.getElementById("c8").style.height = "50px";
+            document.getElementById("c9").style.height = "50px";            
+            document.getElementById("c10").style.height = "50px";
+        }
+    </script>
+    <style>
+        div {
+            height: 50px;
+            width: 50px;
+            border: 1px solid maroon;
+            border-radius: 30px;
+            line-height: 50px;
+            text-align: center;
+            font-weight: bold;
+            position: absolute;
+            cursor: pointer;
+            transition: 0.7s;
+        }
+        button {
+            position: fixed;
+            left: 20px;
+            top: 600px;
+            color: rgb(222, 34, 103);
+            font-size: 20px;
+            border: 2px solid rgb(222, 34, 103);
+            border-radius: 10px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        НГТУ, ФБ, Лабораторная работа 3
+    </header>
+
+    <main>
+        <div style="top: 300px; left: 250px; background-color: seagreen;" onclick="hideCircle(this)" id="c1">1</div>
+        <div style="top: 30px; left: 50px; background-color: rgb(70, 31, 230);" onclick="hideCircle(this)" id="c2">2</div>
+        <div style="top: 100px; left: 25px; background-color: rgb(232, 157, 199);" onclick="hideCircle(this)" id="c3">3</div>
+        <div style="top: 200px; left: 70px; background-color: rgb(244, 180, 117);" onclick="hideCircle(this)" id="c4">4</div>
+        <div style="top: 500px; left: 200px; background-color: rgb(122, 158, 236);" onclick="hideCircle(this)" id="c5">5</div>
+        <div style="top: 120px; left: 100px; background-color: rgb(118, 215, 232);" onclick="hideCircle(this)" id="c6">6</div>
+        <div style="top: 300px; left: 620px; background-color: rgb(121, 220, 162);" onclick="hideCircle(this)" id="c7">7</div>
+        <div style="top: 180px; left: 500px; background-color: rgb(223, 241, 119);" onclick="hideCircle(this)" id="c8">8</div>
+        <div style="top: 40px; left: 600px; background-color: rgb(254, 70, 193);" onclick="hideCircle(this)" id="c9">9</div>
+        <div style="top: 60px; left: 250px; background-color: rgb(219, 44, 228);" onclick="hideCircle(this)" id="c10">10</div>
+        <button onclick="resetCircle()">Сброс</button>
+    </main>
+
+    <footer>
+        &copy; Александра Нестерова, ФБИ-32, 2 курс, 2025
+    </footer>
+</body>
+</html>
