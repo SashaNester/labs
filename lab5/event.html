@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Нестерова Александра Денисовна. Лабораторная работа 5</title>
+    <link rel="stylesheet" href="../main.css">
+    <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon">
+    <link rel="icon" href="../favicon-16x16.png">
+    <link rel="icon" href="../favicon-32x32.png">
+    <script>
+        function showCoords() {
+            let x = this.event.x;
+            let y = this.event.y;
+            let div = document.getElementById('block');
+
+            if(this.event.ctrlKey) {
+                div.innerHTML += '<br>Нажата клавиша Ctrl';
+                div.style.color = 'red';
+                div.style.border = '3px solid yellow';
+                div.style.backgroundColor = 'white';
+            }
+            else if (this.event.altKey) {
+                div.innerHTML += '<br>Нажата клавиша Alt'; 
+                div.style.color = 'pink';
+                div.style.border = '5px dashed lightblue';
+                div.style.backgroundColor = 'blue';
+            }
+            else if (this.event.shiftKey) {
+                div.innerHTML += '<br>Нажата клавиша Shift';
+                div.style.color = 'yellow';
+                div.style.border = '4px dashed darkgreen';
+                div.style.backgroundColor = 'green';
+            }
+            else {
+                div.style.color ='black';
+                div.style.border = '2px solid maroon';
+                div.style.backgroundColor = 'cornflowerblue';
+            }
+            div.innerHTML = '<b>x</b> = ' + x + 'px<br><b>y</b> = ' + y + 'px';
+        }
+    </script>
+    <style>
+        #block {
+            width: 200px; 
+            height: 200px; 
+            border: 2px solid maroon; 
+            background-color: cornflowerblue; 
+            cursor: crosshair;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        НГТУ, ФБ, Лабораторная работа 3
+    </header>
+
+    <main>
+         <div id="block" onmousemove="showCoords()"></div>
+    </main>
+
+    <footer>
+        &copy; Александра Нестерова, ФБИ-32, 2 курс, 2025
+    </footer>
+</body>
+</html>
