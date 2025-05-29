@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Нестерова Александра Денисовна. Лабораторная работа 5</title>
+    <link rel="stylesheet" href="../main.css">
+    <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon">
+    <link rel="icon" href="../favicon-16x16.png">
+    <link rel="icon" href="../favicon-32x32.png">
+    <script src="books.js"></script>
+    <script>
+        function showBooks() {
+            const bookList = document.getElementById('bookList');
+            let allBook = '';
+            for(let i = 0; i < books.length; i++) {
+                const book = books[i];
+                let bookType = 'book-type';
+                if (!book.available) {
+                    bookType += ' unavailable';
+                }
+                if (book.bestseller) {
+                    bookType += ' bestseller';
+                }
+
+                allBook += `
+                    <div class="${bookType}">
+                        <div class="bookInfo">
+                            <b>${ books[i].author }.</b>
+                            <i>${ books[i].name }</i>
+                            &mdash; ${ books[i].publicationYear }
+                        </div>
+                        <div class="bookDetails">
+                            &ndash; Цена: ${ books[i].price } рублей.
+                            ${!book.available ? '<span class="unavailable-text"> Нет в наличии</span>' : ''}
+                        </div>
+                    </div>
+                `;
+            }
+            bookList.innerHTML = allBook;
+        }
+    </script>
+    <style>
+        div {
+            color: #1d1d82;
+            font-size: 20px;
+        }
+        h1 {
+            color: #3e71b4;
+        }
+        .bestseller {
+            border: 1px solid #8d8df3;
+            border-radius: 1px;
+            box-shadow: 3px 3px 3px #7f7fe9;
+            background-color: #e4a0c3;
+        }
+        .unavailable-text {
+            color: #1c1e95;
+            border: 1px #3b1d8e solid;
+            border-radius: 5px;
+            background-color: rgb(250, 252, 252);
+            margin-left: 77%;
+            font-size: 15px;
+        }
+        .unavailable {
+            opacity: 0.5;
+        }
+    </style>
+</head>
+
+<body onload="showBooks()">
+    <header>
+        НГТУ, ФБ, Лабораторная работа 3
+    </header>
+
+    <main>
+        <h1>Список книг</h1>
+        <div id="bookList">
+        </div> 
+    </main>
+
+    <footer>
+        &copy; Александра Нестерова, ФБИ-32, 2 курс, 2025
+    </footer>
+</body>
+</html>
