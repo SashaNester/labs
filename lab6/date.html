@@ -20,7 +20,7 @@
                 {locale: 'de', description: 'Дата и время для немецкой локали: '},
                 {locale: 'it-IT', description: 'Дата и время для итальянской локали: '}
             ];
-            
+        
             let dateOutput = '';
             
                 locales.forEach(locale => {
@@ -32,6 +32,27 @@
             
             out.innerHTML = dateOutput;
         }
+
+        function changeColors() {
+            const header = document.getElementsByTagName('header')[0];
+            const rgb = `rgb(${Math.random() * 255}, ${Math.random() * 255}, ${Math.random() * 255})`;
+            header.style.color = rgb;
+        }
+
+        let timerNum;
+
+        function startChangeColors() {
+            changeColors();
+                timerNum = setInterval(changeColors, 1000);
+                document.getElementById('start-btn').disabled = true;
+                document.getElementById('stop-btn').disabled = false;
+        }
+
+        function stopChangeColors() {
+            clearInterval(timerNum);
+            document.getElementById('stop-btn').disabled = true; 
+            document.getElementById('start-btn').disabled = false;
+        }
     </script>
     <style>
         .dateFormat {
@@ -39,6 +60,9 @@
             font-size: 20px;
             color: crimson;
             margin: 5px;
+        }
+        header {
+            transition: color 0.8s;
         }
     </style>
 </head>
@@ -50,6 +74,10 @@
 
     <main>
         <div id="current-date"></div>
+        <div>
+            <button onclick="startChangeColors()" id="start-btn">Старт</button>
+            <button onclick="stopChangeColors()" disabled id="stop-btn">Стоп</button>
+        </div>
     </main>
 
     <footer>
