@@ -8,6 +8,18 @@
     <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon">
     <link rel="icon" href="../favicon-16x16.png">
     <link rel="icon" href="../favicon-32x32.png">
+    <script>
+        function addNewBlock() {
+            let newBlock = document.createElement('div');
+            newBlock.style.backgroundColor = 'lightgreen';
+            newBlock.style.height = '40px';
+            newBlock.style.margin = '10px';
+            newBlock.style.border = '3px dashed yellow';
+            newBlock.style.boxShadow = '5px 5px 5px green'
+
+            document.querySelector('main').appendChild(newBlock);
+        }
+    </script>
 </head>
 
 <body>
@@ -16,11 +28,7 @@
     </header>
 
     <main>
-        <ol>
-            <li>
-                <a href="bloks.html" target="_blank">Добавление блоков</a>
-            </li>
-        </ol> 
+        <button onclick="addNewBlock()">Добавить блок</button>
     </main>
 
     <footer>
