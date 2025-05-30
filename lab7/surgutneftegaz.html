@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Нестерова Александра Денисовна. Лабораторная работа 7</title>
+    <link rel="stylesheet" href="../main.css">
+    <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon">
+    <link rel="icon" href="../favicon-16x16.png">
+    <link rel="icon" href="../favicon-32x32.png">
+    <script>
+        const dates = ["19.05.2025", "20.05.2025", "21.05.2025", "22.05.2025", "23.05.2025", "24.05.2025", "25.05.2025", "26.05.2025", "27.05.2025", "28.05.2025"];
+        const prices = [23.05, 22.33, 22.18, 22.02, 21.99, 22.70, 22.24, 21.39, 21.60, 21.73];
+    
+        function showStockData() {
+          const table = document.getElementById("stock-table");
+          for (let i = 0; i < dates.length; i++) {
+            const row = document.createElement("tr");
+    
+            const cellDate = document.createElement("td");
+            cellDate.textContent = dates[i];
+    
+            const cellPrice = document.createElement("td");
+            cellPrice.textContent = prices[i].toFixed(2);
+    
+            const cellDiff = document.createElement("td");
+            if (i === 0) {
+              cellDiff.textContent = "—";
+            } else {
+              const diff = prices[i] - prices[i - 1];
+              cellDiff.textContent = diff.toFixed(2);
+              if (diff > 0) cellDiff.style.color = "green";
+              else if (diff < 0) cellDiff.style.color = "red";
+            }
+    
+            row.appendChild(cellDate);
+            row.appendChild(cellPrice);
+            row.appendChild(cellDiff);
+            table.appendChild(row);
+          }
+    
+          const sum = prices.reduce((a, b) => a + b, 0);
+          const avg = (sum / prices.length).toFixed(2);
+          const max = Math.max(...prices).toFixed(2);
+          const min = Math.min(...prices).toFixed(2);
+    
+          document.getElementById("summary").innerHTML = `
+            <p>Средняя цена: <b>${avg}</b> руб</p>
+            <p>Максимальная цена: <b>${max}</b> руб</p>
+            <p>Минимальная цена: <b>${min}</b> руб</p>
+          `;
+    
+        }
+      </script>
+</head>
+
+<body>
+    <header>
+        НГТУ, ФБ, Лабораторная работа 7
+    </header>
+
+    <main>
+        <button onclick="showStockData()">Курс акций Сургутнефтегаз</button>
+        <table id="stock-table" border="1">
+          <tr>
+            <th>Дата</th>
+            <th>Цена, руб</th>
+            <th>Изменение</th>
+          </tr>
+        </table>
+        <div id="summary"></div>
+    </main>
+        
+    <footer>
+        &copy; Александра Нестерова, ФБИ-32, 2 курс, 2025
+    </footer>
+</body>
+</html>
