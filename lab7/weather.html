@@ -10,9 +10,9 @@
     <link rel="icon" href="../favicon-32x32.png">
     <script>
         function loadWeatherForToday() {
-            const apiURL = "https://api.open-meteo.com/v1/forecast?latitude=55.0415&longitude=82.9346&hourly=temperature_2m&timezone=Asia%2FBangkok";
+            const url = "https://api.open-meteo.com/v1/forecast?latitude=55.0415&longitude=82.9346&hourly=temperature_2m&timezone=Asia%2FBangkok";
     
-            fetch(apiURL)
+            fetch(url)
             .then(resp => resp.json())
             .then(data => {
                 const temps = data.hourly.temperature_2m;
@@ -34,7 +34,6 @@
                 `;
     
                 document.getElementById("forecast-result").innerHTML = html;
-                document.getElementById("btn").style.display = "none";
             })
             .catch(err => {
                 console.error("Ошибка:", err);
@@ -49,11 +48,12 @@
           border-radius: 5px;
           width: 400px;
           color: #1e1976;
-          text-align: center;          
+          text-align: center;
+          margin-top: 5px;       
         }
         .btn-forecast {
           background-color: white;
-          border: 1px solid #1e1976;
+          border: 2px solid #1e1976;
           border-radius: 5px;
           color: #1e1976;
           cursor: pointer;
@@ -68,7 +68,7 @@
     </header>
 
     <main>
-        <button id="btn" class="btn-forecast" onclick="loadWeatherForToday()">Показать температуру</button>
+        <button id="btn" class="btn-forecast" onclick="loadWeatherForToday()">Показать погоду</button>
         <div id="forecast-result"></div>
     </main>
 
