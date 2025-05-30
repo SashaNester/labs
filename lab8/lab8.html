@@ -21,7 +21,7 @@
     <main>
         <div id="app">
             <h1 :title="messageRus">{{ message }}</h1>
-            <p> Счётчик: {{ counter }}</p>
+            <p><i class="bi bi-arrow-counterclockwise"></i> Счётчик: {{ counter }}</p>
             <button type="button" class="btn btn-outline-secondary" style="margin-right: 5px; width: 50px;" @click="incCounter" v-if="counter < 10">
                 <i class="bi bi-plus"></i>
             </button>
