@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <meta charset="UTF-8">
+        <title>Курс валют</title>
+        <link rel="stylesheet" href="rgz.css">
+        <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+        <link rel="icon" href="favicon-16x16.png">
+        <link rel="icon" href="favicon-32x32.png">
+        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+        <style>
+            .scroll-to-top {
+                position: fixed;
+                right: 20px;
+                bottom: 20px;
+                color: #2b3846;
+            }
+            .header {
+                background-color: #2b3846;
+                color: #9c9d9f;
+                position: relative;
+            }
+            .navbar {
+                display: flex;
+                justify-content: center;
+                gap: 40px;
+            }
+            .navbar a {
+                color: #9c9d9f;
+                text-decoration: none;
+                font-weight: bold;
+            }
+            footer {
+                background-color: #9c9d9f;
+                color: white;
+            }
+            footer a {
+                color: white;
+            }
+            body {
+                font-family: Arial, sans-serif;
+                padding: 20px;
+            }
+            #result {
+                margin-top: 10px;
+                font-weight: bold;
+            }
+            canvas {
+                max-width: 700px;
+                margin-top: 30px;
+            }
+        </style>
+    </head>
+    <body>
+        <header class="header">
+            ПАО «Ростелеком»
+            <nav class="navbar">
+                <a href="aboutcompany.html">О компании</a>
+                <a href="news.html">Новости</a>
+                <a href="nzd.html">Курс валют</a>
+                <a href="contactdata.html">Контакты</a>
+                <a href="video.html">Видео</a>
+            </nav>
+        </header>
+
+        <main>
+            <h2>Калькулятор валют: Новозеландский доллар (NZD)</h2>
+            <input id="amount" type="number" placeholder="Введите сумму">
+            <select id="direction">
+                <option value="rub_to_nzd">RUB → NZD</option>
+                <option value="nzd_to_rub">NZD → RUB</option>
+            </select>
+            <button onclick="convert()">Конвертировать</button>
+
+            <p id="result"></p>
+
+            <canvas id="chart" width="600" height="300"></canvas>
+        </main>
+
+        <a href="#" class="scroll-to-top" style="text-align: right;">Наверх</a>
+        <footer>
+            &copy; ПАО «Ростелеком». <a href="https://rt.ru" target="_blank">Перейти на официальный сайт</a>
+        </footer>
+        <script>
+            let nzdRate = 0;
+
+            fetch('https://www.cbr-xml-daily.ru/daily_json.js')
+                .then(response => response.json())
+                .then(data => {
+                    nzdRate = data.Valute.NZD.Value;
+                    console.log('Курс NZD:', nzdRate);
+                })
+                .catch(err => console.error('Ошибка при получении курса NZD:', err));
+
+            function convert() {
+                const amount = parseFloat(document.getElementById('amount').value);
+                const direction = document.getElementById('direction').value;
+                let result = 0;
+
+                if (direction === 'rub_to_nzd') {
+                    result = (amount / nzdRate).toFixed(2);
+                } else {
+                    result = (amount * nzdRate).toFixed(2);
+                }
+
+                document.getElementById('result').textContent = `Результат: ${result}`;
+            }
+
+            const today = new Date();
+            const labels = [];
+            const values = [];
+            const promises = [];
+
+            for (let i = 29; i >= 0; i--) {
+                const date = new Date();
+                date.setDate(today.getDate() - i);
+                const yyyy = date.getFullYear();
+                const mm = String(date.getMonth() + 1).padStart(2, '0');
+                const dd = String(date.getDate()).padStart(2, '0');
+                const url = `https://www.cbr-xml-daily.ru/archive/${yyyy}/${mm}/${dd}/daily_json.js`;
+
+                labels.push(`${yyyy}-${mm}-${dd}`);
+
+                promises.push(
+                    fetch(url)
+                        .then(response => response.ok ? response.json() : null)
+                        .then(data => {
+                            if (data && data.Valute && data.Valute.NZD) {
+                                values.push(data.Valute.NZD.Value);
+                            } else {
+                                values.push(null);
+                            }
+                        })
+                        .catch(() => values.push(null))
+                );
+            }
+
+            Promise.all(promises).then(() => {
+                const ctx = document.getElementById('chart').getContext('2d');
+                new Chart(ctx, {
+                    type: 'bar',
+                    data: {
+                        labels: labels,
+                        datasets: [{
+                            label: 'Курс NZD за месяц',
+                            data: values,
+                            backgroundColor: 'rgb(246, 94, 6)'
+                        }]
+                    },
+                    options: {
+                        onClick: (event, elements) => {
+                            if (elements.length > 0) {
+                                const index = elements[0].index;
+                                alert(`Дата: ${labels[index]}\nКурс: ${values[index]}`);
+                            }
+                        },
+                        scales: {
+                            y: {
+                                beginAtZero: false,
+                                title: {
+                                    display: true,
+                                    text: 'Курс (₽)'
+                                }
+                            },
+                            x: {
+                                ticks: {
+                                    maxRotation: 90,
+                                    minRotation: 45
+                                }
+                            }
+                        }
+                    }
+                });
+            });
+        </script>
+    </body>
+</html>
