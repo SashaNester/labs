@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <meta charset="UTF-8">
+        <title>Видео</title>
+        <link rel="stylesheet" href="rgz.css">
+        <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+        <link rel="icon" href="favicon-16x16.png">
+        <link rel="icon" href="favicon-32x32.png">
+        <style>
+            .scroll-to-top {
+                position: fixed;
+                right: 20px;
+                bottom: 20px;
+                color: #2b3846;
+            }
+            .header {
+                background-color: #2b3846;
+                color: #9c9d9f;
+                position: relative;
+            }
+            .navbar {
+                display: flex;
+                justify-content: center;
+                gap: 40px;
+            }
+            .navbar a {
+                color: #9c9d9f;
+                text-decoration: none;
+                font-weight: bold;
+            }
+            footer {
+                background-color: #9c9d9f;
+                color: white;
+            }
+            footer a {
+                color: white;
+            }
+            iframe {
+                width: 700px;
+                height: 350px;
+                border: none;
+                border-radius: 12px;
+                box-shadow: 0 8px 18px rgba(0, 0, 0, 0.15);
+            }
+            h2 {
+                color: rgb(81, 7, 172);
+            }
+            span {
+                color: rgb(246, 94, 6);
+            }
+        </style>
+    </head>
+    <body>
+        <header class="header">
+            ПАО «Ростелеком»
+            <nav class="navbar">
+                <a href="aboutcompany.html">О компании</a>
+                <a href="news.html">Новости</a>
+                <a href="nzd.html">Курс валют</a>
+                <a href="contactdata.html">Контакты</a>
+                <a href="video.html">Видео</a>
+            </nav>
+        </header>
+
+        <main>
+            <h2>Видео о <span>Ростелеком</span></h2>
+            <iframe src="https://vk.com/video_ext.php?oid=-24720111&id=456243836&hash=f548b103f9c6c0de&hd=2"></iframe>
+        </main>
+
+        <a href="#" class="scroll-to-top" style="text-align: right;">Наверх</a>
+        <footer>
+            &copy; ПАО «Ростелеком». <a href="https://rt.ru" target="_blank">Перейти на официальный сайт</a>
+        </footer>
+        
+    </body>
+</html>
